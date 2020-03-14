@@ -40,8 +40,8 @@ int main (int argc, char **argv) {
   
   ...
 
-  const CustomNode initNode = new CustomNode{...};
-  const CustomNode finalNode = new CustomNode{...};
+  const CustomNode *initNode = new CustomNode{...};
+  const CustomNode *finalNode = new CustomNode{...};
   
   std::cout << "From: " << Node::print(initNode);
   std::cout << "To: " << Node::print(finalNode);
