@@ -48,7 +48,7 @@ int main (int argc, char **argv) {
   std::cout << "Distance: " << Node::Distance(initNode, finalNode) << std::endl;
 
   SearchAlgorithm *searcher = creteSearch(SearchAlgorithm::Type::SortFirstSearch, SearchAlgorithm::Mode::CLOSE);
-  const std::vector<Node*> result = searcher->search(initNode, finalNode);
+  const std::vector<const Node*> result = searcher->search(initNode, finalNode);
   std::cout << "Path: " << Node::print(result);
   std::cout << "Steps: " << result.size()-1 << std::endl;
 }
