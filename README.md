@@ -40,15 +40,15 @@ int main (int argc, char **argv) {
   
   ...
 
-  CustomNode initNode = CustomNode{...};
-  CustomNode finalNode = CustomNode{...};
+  const CustomNode initNode = new CustomNode{...};
+  const CustomNode finalNode = new CustomNode{...};
   
-  std::cout << "From: " << initNode.str();
-  std::cout << "To: " << finalNode.str();
-  std::cout << "Distance: " << Node::Distance(&initNode, &finalNode) << std::endl;
+  std::cout << "From: " << Node::print(initNode);
+  std::cout << "To: " << Node::print(finalNode);
+  std::cout << "Distance: " << Node::Distance(initNode, finalNode) << std::endl;
 
   SearchAlgorithm *searcher = creteSearch(SearchAlgorithm::Type::SortFirstSearch, SearchAlgorithm::Mode::CLOSE);
-  const std::vector<Node*> result = searcher->search(&initNode, &finalNode);
+  const std::vector<Node*> result = searcher->search(initNode, finalNode);
   std::cout << "Path: " << Node::print(result);
   std::cout << "Steps: " << result.size()-1 << std::endl;
 }
